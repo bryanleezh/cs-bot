@@ -56,7 +56,7 @@ class StartupConfig(BaseModel):
     adapter: Dict[str, Any] = {}
     callback_path: str = "/callback"
     signing_secret: str = ""
-    debug = False
+    debug: bool = False
     max_scheduler_workers: int = 4
     max_msg_handler_workers: int = 32
     owner_emails: List[str] = []
