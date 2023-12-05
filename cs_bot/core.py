@@ -227,8 +227,7 @@ class CSBot(BaseBot):
             time.sleep(1)
 
     def _setup_startup_hooks(self):
-        @self.get_app().before_first_request
-        def background_startup():
+        with self.get_app().app_context():
             threading.Thread(target=self.lifecycle.emit_startup).start()
 
     def _extend_web_server(self):
