@@ -76,9 +76,11 @@ from cs_bot import StartupConfig
 from cs_bot.adapters import sop_bot
 
 config = {
-    "adapter": {"app_id": "your_app_id",
-    "app_secret": "your_app_secret",
-    "signing_secret": "your_signing_secret"}
+    "adapter": {
+        "app_id": "your_app_id",
+        "app_secret": "your_app_secret",
+        "signing_secret": "your_signing_secret"
+    }
 }
 cs_bot.init(StartupConfig.model_validate(config))
 cs_bot.register_adapter(sop_bot.Adapter)
