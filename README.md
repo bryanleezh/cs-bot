@@ -98,7 +98,7 @@ if __name__ == '__main__':
 
 ### Configure the Callback URL
 
-1. 
+1. To be able to connect your server to the bot you have created, create an account on [ngrok](https://ngrok.com/) and forward the port you specified previously
 2. Open the SeaTalk Open Platform, find `your app -> Event Callback -> Event Callback URL`, edit the Event Callback URL
    to `http://your_host_ip:your_port/callback` and save
 3. Open your seatalk and click the `search contact`, find your bot and subscribe
