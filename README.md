@@ -67,6 +67,8 @@ def echo(session: MessageSession):
 
 #### main.py
 
+To run locally, your host ip can be "0.0.0.0", with any port number of your choice
+
 ```python
 # main.py
 import cs_bot
@@ -74,9 +76,11 @@ from cs_bot import StartupConfig
 from cs_bot.adapters import sop_bot
 
 config = {
-    "adapter": {"app_id": "your_app_id", "app_secret": "your_app_secret", "signing_secret": "your_signing_secret"}
+    "adapter": {"app_id": "your_app_id",
+    "app_secret": "your_app_secret",
+    "signing_secret": "your_signing_secret"}
 }
-cs_bot.init(StartupConfig.parse_obj(config))
+cs_bot.init(StartupConfig.model_validate(config))
 cs_bot.register_adapter(sop_bot.Adapter)
 cs_bot.load_plugin("plugins.echo")
 
@@ -92,10 +96,11 @@ if __name__ == '__main__':
 
 ### Configure the Callback URL
 
-1. Open the SeaTalk Open Platform, find `your app -> Event Callback -> Event Callback URL`, edit the Event Callback URL
+1. 
+2. Open the SeaTalk Open Platform, find `your app -> Event Callback -> Event Callback URL`, edit the Event Callback URL
    to `http://your_host_ip:your_port/callback` and save
-2. Open your seatalk and click the `search contact`, find your bot and subscribe
-3. Send `echo hello world` and then your bot should reply a `hello world` to you
+3. Open your seatalk and click the `search contact`, find your bot and subscribe
+4. Send `echo hello world` and then your bot should reply a `hello world` to you
 
 ### What happened
 
